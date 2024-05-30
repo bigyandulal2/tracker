@@ -1,0 +1,23 @@
+$padding: 2rem;
+$height: 100vh;
+$width: 100vw;
+$gap: 2rem;
+
+.container {
+  height: $height;
+  width: $width;
+  background-color: $very-dark-blue;
+  @include flexbox($justify: center, $align: center, $gap: $gap, $wrap: wrap);
+  @include lg {
+    padding: 0 7rem;
+    gap: 0;
+  }
+  @include md {
+    height: fit-content;
+    gap: $gap * 2;
+    padding: 0 5rem;
+  }
+  @include sm {
+    padding: 0;
+  }
+}

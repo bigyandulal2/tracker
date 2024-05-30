@@ -1,0 +1,90 @@
+$padding: 2rem;
+$height: 2rem;
+$width: 3rem;
+$gap: 2rem;
+$border: 2px solid white;
+$border_radius: 12px;
+
+.user {
+  background-color: $dark-blue;
+  border-radius: $border_radius;
+  width: $width * 6.5;
+  padding-bottom: $padding * 2;
+  border-radius: $border_radius;
+  @include sm {
+    padding-bottom: $padding;
+  }
+  @include lg {
+    // margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+  }
+  &_profile {
+    // height: 90%;
+    width: 100%;
+    @include lg {
+      // padding-top: 0;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    background-color: $blue;
+    padding: $padding * 3 $padding;
+    padding-top: $padding/1;
+    border-radius: $border_radius;
+    @include flexbox($direction: column, $gap: $gap);
+    @include sm {
+      padding: 0;
+      justify-content: space-evenly;
+    }
+    & img {
+      display: inline-block;
+      width: $width * 2;
+      border: $border;
+      border-radius: 10000px;
+    }
+    &_detail {
+      line-height: 1.4;
+
+      & span {
+        font-size: 1rem;
+        color: $pale-blue;
+        @include sm {
+          font-size: 1.5rem;
+        }
+      }
+      & h3 {
+        font-size: 2.8rem;
+        color: white;
+        font-weight: 300;
+      }
+    }
+  }
+  &_duration {
+    padding: $padding;
+    padding-top: $padding * 2;
+    padding-bottom: 0;
+    list-style: none;
+    font-size: 1.3rem;
+    color: $desaturated-blue;
+    @include flexbox($direction: column, $gap: $gap);
+    @include md {
+      flex-direction: row;
+      width: 100%;
+      justify-content: center;
+    }
+    & li {
+      cursor: pointer;
+      @include md {
+        font-size: 2rem;
+      }
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
